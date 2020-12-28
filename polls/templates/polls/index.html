@@ -7,3 +7,10 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+<form action="{% url 'polls:give' %}" method="post">
+    {% csrf_token %}
+    <label for="feedback">Give feedback on polls: </label>
+    <input id="feedback" type="text" name="feedback">
+    <input type="submit" value="OK">
+</form>
